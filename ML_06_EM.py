@@ -65,3 +65,4 @@ plt.legend(["Component 1", "Component 2", "Mixture"])
 plt.show()
 
 #Iterations: 7
+#pip install numpy matplotlib scipy
