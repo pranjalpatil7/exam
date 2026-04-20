@@ -51,3 +51,9 @@ def plot(X, y, title):
 
 plot(X_train, y_train, "Training Set")
 plot(X_test, y_test, "Test Set")
+
+# Confusion Matrix:
+#  [[66  2]
+#  [ 8 24]]
+# Accuracy: 0.9
+#pip install numpy pandas matplotlib scikit-learn
