@@ -49,42 +49,6 @@ ggplot(g, aes(x="", y=Freq, fill=Var1)) +
   ggtitle("Gender Distribution") +
   theme_minimal()
 
-data <- read_csv("C:\\Users\\PRANJAL\\Documents\\StudentsPerformance.csv", show_col_types = FALSE)
-
-# 1. SCATTER PLOT
-ggplot(data, aes(x=`math score`, y=`reading score`)) +
-  geom_point(color="blue") +
-  ggtitle("Scatter Plot: Math vs Reading")
-
-# 2. HISTOGRAM
-ggplot(data, aes(x=`math score`)) +
-  geom_histogram(fill="green", bins=10) +
-  ggtitle("Histogram: Math Score")
-
-# 3. BOX PLOT
-ggplot(data, aes(x=gender, y=`math score`)) +
-  geom_boxplot(fill="orange") +
-  ggtitle("Box Plot: Gender vs Math Score")
-
-# 4. VIOLIN PLOT
-ggplot(data, aes(x=gender, y=`reading score`)) +
-  geom_violin(fill="purple") +
-  ggtitle("Violin Plot: Gender vs Reading Score")
-
-# 5. BAR CHART
-ggplot(data, aes(x=gender)) +
-  geom_bar(fill="skyblue") +
-  ggtitle("Bar Chart: Gender Distribution")
-
-# 6. PIE CHART
-gender_count <- as.data.frame(table(data$gender))
-
-ggplot(gender_count, aes(x="", y=Freq, fill=Var1)) +
-  geom_bar(stat="identity", width=1) +
-  coord_polar("y") +
-  ggtitle("Pie Chart: Gender Distribution")
-
-
 
 #PLOTLY
 
@@ -128,26 +92,68 @@ plot_ly(data, x=~math, type="histogram")
 plot_ly(data, y=~math, color=~gender, type="box")
 
 
-data <- read_csv("C:/Users/PRANJAL/Documents/StudentsPerformance.csv", show_col_types = FALSE)
+#  2. USING CSV FILE 2nd method
 
-# SCATTER
-plot_ly(data, x=~`math score`, y=~`reading score`,
-        type="scatter", mode="markers")
 
-# HISTOGRAM
-plot_ly(data, x=~`math score`, type="histogram")
+# data <- read_csv("C:\\Users\\PRANJAL\\Documents\\StudentsPerformance.csv", show_col_types = FALSE)
 
-# BOX
-plot_ly(data, x=~gender, y=~`math score`, type="box")
+# # 1. SCATTER PLOT
+# ggplot(data, aes(x=`math score`, y=`reading score`)) +
+#   geom_point(color="blue") +
+#   ggtitle("Scatter Plot: Math vs Reading")
 
-# BAR
-g2 <- as.data.frame(table(data$gender))
-plot_ly(g2, x=~Var1, y=~Freq, type="bar",
-        color=~Var1, text=~Freq, textposition="auto")
+# # 2. HISTOGRAM
+# ggplot(data, aes(x=`math score`)) +
+#   geom_histogram(fill="green", bins=10) +
+#   ggtitle("Histogram: Math Score")
 
-# PIE
-g2 <- as.data.frame(table(data$gender))
-plot_ly(g2, labels=~Var1, values=~Freq, type="pie")
+# # 3. BOX PLOT
+# ggplot(data, aes(x=gender, y=`math score`)) +
+#   geom_boxplot(fill="orange") +
+#   ggtitle("Box Plot: Gender vs Math Score")
+
+# # 4. VIOLIN PLOT
+# ggplot(data, aes(x=gender, y=`reading score`)) +
+#   geom_violin(fill="purple") +
+#   ggtitle("Violin Plot: Gender vs Reading Score")
+
+# # 5. BAR CHART
+# ggplot(data, aes(x=gender)) +
+#   geom_bar(fill="skyblue") +
+#   ggtitle("Bar Chart: Gender Distribution")
+
+# # 6. PIE CHART
+# gender_count <- as.data.frame(table(data$gender))
+
+# ggplot(gender_count, aes(x="", y=Freq, fill=Var1)) +
+#   geom_bar(stat="identity", width=1) +
+#   coord_polar("y") +
+#   ggtitle("Pie Chart: Gender Distribution")
+
+
+
+
+
+# data <- read_csv("C:/Users/PRANJAL/Documents/StudentsPerformance.csv", show_col_types = FALSE)
+
+# # SCATTER
+# plot_ly(data, x=~`math score`, y=~`reading score`,
+#         type="scatter", mode="markers")
+
+# # HISTOGRAM
+# plot_ly(data, x=~`math score`, type="histogram")
+
+# # BOX
+# plot_ly(data, x=~gender, y=~`math score`, type="box")
+
+# # BAR
+# g2 <- as.data.frame(table(data$gender))
+# plot_ly(g2, x=~Var1, y=~Freq, type="bar",
+#         color=~Var1, text=~Freq, textposition="auto")
+
+# # PIE
+# g2 <- as.data.frame(table(data$gender))
+# plot_ly(g2, labels=~Var1, values=~Freq, type="pie")
 
 
 
