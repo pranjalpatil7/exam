@@ -4,6 +4,19 @@ import re
 data = pd.read_csv("20191226-reviews.csv")
 reviews = data["body"]
 
+# reviews = [
+#     "This product is amazing and works perfectly. I love it",
+#     "Worst experience ever. The product is broken and useless",
+#     "Good quality and nice design, very satisfied",
+#     "Terrible service, I hate this item",
+#     "Excellent performance and fantastic battery life",
+#     "Bad product, very slow and full of bugs",
+#     "Awesome phone, best purchase ever",
+#     "Not good, I am disappointed with the quality",
+#     "Perfect and reliable, works great",
+#     "Awful experience, the device has many issues"
+# ]
+
 pos = [
     "good","great","excellent","amazing","love","best","nice","happy",
     "awesome","fantastic","perfect","reliable","wonderful","satisfied","cool"
