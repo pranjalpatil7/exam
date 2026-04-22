@@ -1,6 +1,9 @@
 import pandas as pd
 import re
 
+# Using Positive and Negative Word Count – With Normalization and semi-normalization for Calculating Sentiment Score
+# Use Amazon Cell Phone Reviews dataset from Kaggle.
+
 data = pd.read_csv("20191226-reviews.csv")
 reviews = data["body"]
 
@@ -56,3 +59,14 @@ for i in range(10):
     print()
 
 # pip install pandas numpy
+
+# Review: This product is amazing and works perfectly
+# Positive: 2 Negative: 0
+# Method 1 Normalization Sentiment Score : 0.2
+# Method 2 Semi Normalization Sentiment Score : 1.0
+
+
+# Review: Worst experience ever
+# Positive: 0 Negative: 3
+# Method 1 Normalization Sentiment Score : -0.333
+# Method 2 Semi Normalization Sentiment Score : -1.0
